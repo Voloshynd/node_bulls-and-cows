@@ -7,10 +7,10 @@
  * @return {number} A random 4-digit number
  */
 function generateRandomNumber() {
-  const lenght = 4;
+  const length = 4;
   const arrNums = [];
 
-  while (arrNums.length < lenght) {
+  while (arrNums.length < length) {
     const num = Math.floor(Math.random() * 10);
 
     if (num === 0 && !arrNums.length) {
