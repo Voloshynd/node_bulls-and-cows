@@ -5,14 +5,8 @@ const { generateRandomNumber } = require('./modules/generateRandomNumber');
 const { checkIsValidUserInput } = require('./modules/checkIsValidUserInput');
 const { getBullsAndCows } = require('./modules/getBullsAndCows');
 const terminal = readline.createInterface(process.stdin, process.stdout);
-let userInput = 0;
 
-terminal.question('Write your 4-digit number', (number) => {
-  userInput = number;
-  terminal.close();
-});
-
-function app() {
+function app(userInput) {
   const numberToGuess = generateRandomNumber();
   const inputStr = String(userInput);
 
@@ -25,4 +19,7 @@ function app() {
   return result;
 }
 
-app();
+terminal.question('Write your 4-digit number: ', (number) => {
+  terminal.close();
+  app(number);
+});
