@@ -9,6 +9,7 @@ let userInput = 0;
 
 terminal.question('Write your 4-digit number', (number) => {
   userInput = number;
+  terminal.close();
 });
 
 function app() {
